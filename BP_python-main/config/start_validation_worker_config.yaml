@@ -1,0 +1,54 @@
+rabbitmq_logging:
+  host: "localhost"
+  port: "5672"
+  username: "ncadmin"
+  password: "ncadmin" #default credentials
+  logging_level: INFO
+
+db_config:
+  user: "ncadmin"
+  password: "ncadmin"
+  host: "127.0.0.1"
+  database: "archivationsystem"
+
+rabbitmq_connection:
+  host: "localhost"
+  virtual_host: "archivationsystem"
+  port: "5672"
+  credentials:
+    name: "ncadmin"
+    password: "ncadmin" #default credentials
+  enable_ssl:
+    false
+    #Server_name_id: str #optional
+    #certificate_file: str-path
+    #private_key_file: str-path
+    #pk_password: str
+    #CA_file: str-path
+    #CA_path: str-path
+    #CA_data: str-path
+
+rabbitmq_info:
+  # consumer_ID: "Validator"
+  task_queue: "validation"
+  # control_exchange: "control"
+
+validation_info:
+  contact:
+    email_server: "smtp.gmail.com" #email server
+    sender_email: ""
+    sender_password: ""
+    email: "" #contact email if validation wasnt successfull
+    phone: "xxxxxxxxxxxxx" #contact phone number if validation wasnt successfull
+  remote_access:
+    False #information to be able to get files from remote nextcloud server or if you want to run this localy get false
+    #host: '192.168.153.135'
+    #port: 22
+    #credentials:
+    #  username: 'server'
+    #  key_filepath: '' #path to authetication key for sftp
+    #  password: '' #password to for authetication key file
+  TSA_info:
+    tsa_tsr_url: "https://freetsa.org/tsr"
+    tsa_cert_path: "/home/nextcloudadmin/certs/tsa.crt"
+    tsa_ca_pem: "/home/nextcloudadmin/certs/cacert.pem"

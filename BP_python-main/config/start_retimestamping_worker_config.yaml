@@ -1,0 +1,42 @@
+rabbitmq_logging:
+  host: "localhost"
+  port: "5672"
+  username: "ncadmin"
+  password: "ncadmin" #default credentials
+  logging_level: INFO
+
+db_config:
+  user: "ncadmin"
+  password: "ncadmin"
+  host: "127.0.0.1"
+  database: "archivationsystem"
+
+rabbitmq_connection:
+  host: "localhost"
+  virtual_host: "archivationsystem"
+  port: "5672"
+  credentials:
+    name: "ncadmin"
+    password: "ncadmin" #default credentials
+  enable_ssl:
+    false
+    #Server_name_id: str #optional
+    #certificate_file: str-path
+    #private_key_file: str-path
+    #pk_password: str
+    #CA_file: str-path
+    #CA_path: str-path
+    #CA_data: str-path
+
+rabbitmq_info:
+  # consumer_ID: "Retimestamper"
+  task_queue: "retimestamping"
+  # control_exchange: "control"
+
+retimestamping_info:
+  validity_length_in_years: 2
+  TSA_info:
+    tsa_tsr_url: "https://freetsa.org/tsr"
+    tsa_cert_path: "/home/nextcloudadmin/certs/tsa.crt"
+    tsa_ca_pem: "/home/nextcloudadmin/certs/cacert.pem"
+    tsa_crl_url: "https://www.freetsa.org/crl/root_ca.crl"

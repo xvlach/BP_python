@@ -1,0 +1,32 @@
+rabbitmq_connection: #connection parameters for connecting to rabbitmq
+  host: "localhost"
+  virtual_host: "archivationsystem"
+  port: "5672"
+  credentials:
+    name: "ncadmin"
+    password: "ncadmin" #default credentials
+  enable_ssl:
+    false #remove false if you want to use paramaters below. You have to use all of them
+    #Server_name_id: str #optional
+    #certificate_file: str-path
+    #private_key_file: str-path
+    #pk_password: str
+    #CA_file: str-path
+    #CA_path: str-path
+    #CA_data: str-path
+rabbitmq_logging: #connection parameters for connecting logger to rabbitmq where will be logs sent
+  host: "localhost"
+  port: "5672"
+  username: "ncadmin"
+  password: "ncadmin" #default credentials
+
+rabbitmq_info:
+  consumer_ID: "Archivator" #queue for control task for worker
+  task_queue: "validation" #rabbitmq queue from where data will be consumed or sent
+  control_exchange: "control"
+
+db_config:
+  user: "test_user"
+  password: "Password1"
+  host: "127.0.0.1"
+  database: "archivation_system_db"
